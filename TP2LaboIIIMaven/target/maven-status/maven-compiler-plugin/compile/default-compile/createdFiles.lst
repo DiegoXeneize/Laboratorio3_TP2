@@ -1,0 +1,10 @@
+ar\edu\utn\frbb\tup\Inputs\InputCliente.class
+ar\edu\utn\frbb\tup\Interfaces\MenuInterface.class
+ar\edu\utn\frbb\tup\Utils\Funciones.class
+ar\edu\utn\frbb\tup\App.class
+ar\edu\utn\frbb\tup\Inputs\MenuIngreso.class
+ar\edu\utn\frbb\tup\Modelos\Banco.class
+ar\edu\utn\frbb\tup\Modelos\CuentaBancaria$TipoCuenta.class
+ar\edu\utn\frbb\tup\Inputs\InputCuenta.class
+ar\edu\utn\frbb\tup\Modelos\Cliente.class
+ar\edu\utn\frbb\tup\Modelos\CuentaBancaria.class
