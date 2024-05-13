@@ -12,21 +12,18 @@ import ar.edu.utn.frbb.tup.Modelos.Cliente;
 import ar.edu.utn.frbb.tup.Modelos.CuentaBancaria;
 import ar.edu.utn.frbb.tup.Utils.Funciones;
 import ar.edu.utn.frbb.tup.Utils.FuncionesCliente;
+import ar.edu.utn.frbb.tup.Control.ControlCuentas;
+import ar.edu.utn.frbb.tup.Enums.TipoCuenta;
 
 public class InputCuenta {
 
     Scanner scanner = new Scanner(System.in);
 
-    private List<CuentaBancaria> cuentas;
+    
     FuncionesCliente funciones = new FuncionesCliente();
 
 
-    public InputCuenta() {
-
-        cuentas = new ArrayList<>();
-    }
-
-    public void agregarCuenta(Banco banco) {
+    public void agregarCuenta(ControlCuentas controlCuentas, Banco banco) {
 
         char respuesta;
         boolean validarFecha = false;
@@ -40,11 +37,11 @@ public class InputCuenta {
             System.out.println("Tipo de cuenta (Ahorro o Corriente):");
             String tipoCuentaInput = scanner.nextLine().toLowerCase();
 
-            CuentaBancaria.TipoCuenta tipoCuenta = null;
+            TipoCuenta tipoCuenta = null;
             if (tipoCuentaInput.equals("ahorro")) {
-                tipoCuenta = CuentaBancaria.TipoCuenta.AHORRO;
+                tipoCuenta = TipoCuenta.AHORRO;
             } else if (tipoCuentaInput.equals("corriente")) {
-                tipoCuenta = CuentaBancaria.TipoCuenta.CORRIENTE;
+                tipoCuenta = TipoCuenta.CORRIENTE;
             } else {
                 System.out.println("Tipo de cuenta inválida");
             }
@@ -70,13 +67,13 @@ public class InputCuenta {
 
         System.out.println("Ingrese el DNI del cliente asociado:");
         String dniCliente = scanner.nextLine();
-        Cliente clienteAsociado = funciones.buscarClientePorDni(dniCliente,banco);
+        Cliente clienteAsociado = funciones.buscarClientePorDni(dniCliente, banco);
 
         if (clienteAsociado == null) {
             System.out.println("Cliente no encontrado");
         }else {
             CuentaBancaria nuevaCuenta = new CuentaBancaria(numCuenta, clienteAsociado, tipoCuenta, saldo, fechaAperturaLocalDate);
-            cuentas.add(nuevaCuenta);
+            controlCuentas.agregarCuenta(nuevaCuenta);
             
         }
 

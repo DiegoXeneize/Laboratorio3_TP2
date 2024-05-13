@@ -1,13 +1,10 @@
 package ar.edu.utn.frbb.tup.Modelos;
 
+import ar.edu.utn.frbb.tup.Enums.TipoCuenta;
+
 import java.time.LocalDate;
 
 public class CuentaBancaria {
-
-    public enum TipoCuenta{
-        AHORRO,
-        CORRIENTE
-    }
 
     private String numCuenta;
     private Cliente clienteAsociado;
@@ -63,5 +60,15 @@ public class CuentaBancaria {
         this.fechaApertura = fechaApertura;
     }
 
+    @Override
+    public String toString() {
+        return "CuentaBancaria{" +
+                "numCuenta='" + numCuenta + '\'' +
+                ", clienteAsociado=" + clienteAsociado +
+                ", tipoCuenta=" + tipoCuenta +
+                ", saldo=" + saldo +
+                ", fechaApertura=" + fechaApertura +
+                '}';
+    }
     
 }

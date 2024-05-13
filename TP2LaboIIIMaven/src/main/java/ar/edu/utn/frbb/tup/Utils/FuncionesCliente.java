@@ -31,12 +31,7 @@ public class FuncionesCliente {
             System.out.println("No hay clientes para imprimir.");
         } else {
             for (Cliente cliente : banco.getClientes()) {
-                System.out.println(
-                    "DNI: " + cliente.getDni() +
-                    ", Cliente: " + cliente.getNombre() + " " + cliente.getApellido() + 
-                    ", Dirección: " + cliente.getDireccion() +
-                    ", Teléfono: " + cliente.getNumTelefono()
-                );
+                System.out.println(cliente.toString());
             }
         }
     }
